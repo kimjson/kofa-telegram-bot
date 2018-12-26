@@ -1,0 +1,17 @@
+{
+  "python.pythonPath": "env/bin/python",
+  "cSpell.words": [
+    "boto",
+    "dynamodb",
+    "kofa",
+    "koreafilm",
+    "kr",
+    "or",
+    "pynamodb",
+    "serverless",
+    "sqlite"
+  ],
+  "search.exclude": {
+    "**/env": true
+  }
+}

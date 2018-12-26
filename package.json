@@ -1,0 +1,25 @@
+{
+  "name": "kofa-telegram-bot",
+  "description": "Telegram bot notification project for KOFA (koreafilm.or.kr) updates",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steinkim/kofa-telegram-bot.git"
+  },
+  "keywords": [
+    "python",
+    "aws",
+    "lambda",
+    "serverless",
+    "telegram"
+  ],
+  "author": "steinkim",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-python-requirements": "^3.0.9"
+  },
+  "bugs": {
+    "url": "https://github.com/steinkim/kofa-telegram-bot/issues"
+  },
+  "homepage": "https://github.com/steinkim/kofa-telegram-bot#readme"
+}

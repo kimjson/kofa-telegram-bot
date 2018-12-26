@@ -1,0 +1,29 @@
+service: kofa-telegram-bot
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.6
+  environment:
+    TELEGRAM_TOKEN: ${file(./serverless.env.yml):TELEGRAM_TOKEN, ''}
+
+functions:
+  cron:
+    handler: handler.run
+    events:
+      # Invoke Lambda function everyday at midnight
+      - schedule: cron(0 0 ? * * *)
+
+  webhook:
+    handler: handler.webhook
+    events:
+      - http: POST /
+
+  set_webhook:
+    handler: handler.set_webhook
+    events:
+      - http: POST /set_webhook
+
+plugins:
+  - serverless-python-requirements
