@@ -1,7 +1,8 @@
 from models import Program
 
 
-def store(programs):
-    for program in programs:
-        if Program.get(Program.kofa_id == program['kofa_id']) is None:
-            Program.create(**program)
+def store(program_dicts):
+    return (Program.insert_many(program_dicts)
+                   .on_conflict_replace()
+                   .returning(Program)
+                   .execute())

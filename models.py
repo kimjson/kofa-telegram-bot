@@ -1,6 +1,16 @@
-from peewee import SqliteDatabase, Model, IntegerField, CharField
+import os
 
-database = SqliteDatabase('kofa_telegram_bot.db')
+from peewee import (PostgresqlDatabase, Model, IntegerField, CharField,
+                    ManyToManyField)
+
+
+database = PostgresqlDatabase(
+    os.environ.get('POSTGRESQL_DATABASE'),
+    user=os.environ.get('POSTGRESQL_USER'),
+    password=os.environ.get('POSTGRESQL_PASSWORD'),
+    host=os.environ.get('POSTGRESQL_HOST'),
+    port=os.environ.get('POSTGRESQL_PORT'),
+)
 
 
 class BaseModel(Model):
@@ -16,16 +26,13 @@ class KofaModel(BaseModel):
     kofa_id = CharField(unique=True)
 
 
-class Chat(TelegramModel):
-    pass
-
-
 class Program(KofaModel):
     title = CharField()
-    link = CharField()
+    url = CharField()
 
 
-migrated_models = [
-    Chat,
-    Program,
-]
+class Chat(TelegramModel):
+    programs = ManyToManyField(Program, backref='chats')
+
+
+migrated_models = [Program, Chat]
