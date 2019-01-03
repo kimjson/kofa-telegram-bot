@@ -4,7 +4,8 @@ import requests
 
 from bs4 import BeautifulSoup
 
-from constants import KOFA_BASE_URL, BOT_START_MESSAGE
+from constants.bot import BOT_START_MESSAGE
+from constants.kofa import KOFA_BASE_URL
 
 
 def fetch():

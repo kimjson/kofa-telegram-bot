@@ -168,3 +168,6 @@ serverless.env.yml
 
 *.db
 *.db-journal
+
+settings/*
+!settings/base.py

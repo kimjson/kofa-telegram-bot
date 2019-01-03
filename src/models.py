@@ -1,15 +1,16 @@
-import os
-
 from peewee import (PostgresqlDatabase, Model, IntegerField, CharField,
                     ManyToManyField)
 
+from settings import (POSTGRESQL_DATABASE, POSTGRESQL_USER, POSTGRESQL_PASSWORD,
+                      POSTGRESQL_HOST, POSTGRESQL_PORT)
+
 
 database = PostgresqlDatabase(
-    os.environ.get('POSTGRESQL_DATABASE'),
-    user=os.environ.get('POSTGRESQL_USER'),
-    password=os.environ.get('POSTGRESQL_PASSWORD'),
-    host=os.environ.get('POSTGRESQL_HOST'),
-    port=os.environ.get('POSTGRESQL_PORT'),
+    POSTGRESQL_DATABASE,
+    POSTGRESQL_USER,
+    POSTGRESQL_PASSWORD,
+    POSTGRESQL_HOST,
+    POSTGRESQL_PORT,
 )
 
 

@@ -5,14 +5,6 @@ frameworkVersion: ">=1.2.0 <2.0.0"
 provider:
   name: aws
   runtime: python3.6
-  environment:
-    POSTGRESQL_DATABASE: ${file(./serverless.env.yml):POSTGRESQL_DATABASE, ''}
-    POSTGRESQL_USER: ${file(./serverless.env.yml):POSTGRESQL_USER, ''}
-    POSTGRESQL_PASSWORD: ${file(./serverless.env.yml):POSTGRESQL_PASSWORD, ''}
-    POSTGRESQL_HOST: ${file(./serverless.env.yml):POSTGRESQL_HOST, ''}
-    POSTGRESQL_PORT: ${file(./serverless.env.yml):POSTGRESQL_PORT, ''}
-    TELEGRAM_TOKEN: ${file(./serverless.env.yml):TELEGRAM_TOKEN, ''}
-
 
 functions:
   cron:
@@ -33,3 +25,4 @@ functions:
 
 plugins:
   - serverless-python-requirements
+  - serverless-offline

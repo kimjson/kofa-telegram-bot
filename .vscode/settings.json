@@ -2,16 +2,23 @@
   "python.pythonPath": "env/bin/python",
   "cSpell.words": [
     "boto",
+    "database",
+    "dotenv",
     "dynamodb",
     "kofa",
     "koreafilm",
     "kr",
     "or",
+    "postgresql",
     "pynamodb",
     "serverless",
-    "sqlite"
+    "sqlite",
+    "storer"
   ],
   "search.exclude": {
     "**/env": true
+  },
+  "[python]": {
+    "editor.rulers": [73, 80]
   }
 }
