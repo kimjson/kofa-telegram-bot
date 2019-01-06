@@ -5,6 +5,8 @@ frameworkVersion: ">=1.2.0 <2.0.0"
 provider:
   name: aws
   runtime: python3.6
+  environment:
+    KOFA_TELEGRAM_BOT_ENV: production
 
 functions:
   cron:
