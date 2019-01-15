@@ -1,0 +1,7 @@
+POSTGRESQL_HOST = 'db_host'
+POSTGRESQL_PORT = 5432
+POSTGRESQL_DATABASE = 'db_name'
+POSTGRESQL_USER = 'db_user'
+POSTGRESQL_PASSWORD = 'db_password'
+
+TELEGRAM_TOKEN = 'token-from-bot-father'

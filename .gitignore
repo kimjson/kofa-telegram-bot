@@ -169,4 +169,4 @@ serverless.env.yml
 *.db
 *.db-journal
 
-settings/settings.json
+settings/production.py
