@@ -1,9 +1,17 @@
 from __future__ import with_statement
+import os
+import sys
+
 from alembic import context
-from sqlalchemy import engine_from_config, pool
+from sqlalchemy import create_engine, engine_from_config, pool
 from logging.config import fileConfig
 
-from settings.settings import *
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.abspath(__file__), "../.."))
+sys.path.append(PROJECT_ROOT)
+from src.models import Base
+from settings import (
+    POSTGRESQL_USER, POSTGRESQL_PASSWORD, POSTGRESQL_HOST, POSTGRESQL_DATABASE
+)
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -17,7 +25,7 @@ fileConfig(config.config_file_name)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = None
+target_metadata = Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

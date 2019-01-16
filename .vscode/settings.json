@@ -3,22 +3,35 @@
   "cSpell.words": [
     "boto",
     "database",
+    "dbapi",
     "dotenv",
     "dynamodb",
+    "getcwd",
     "kofa",
     "koreafilm",
     "kr",
+    "myapp",
+    "mymodel",
     "or",
     "postgresql",
     "pynamodb",
     "serverless",
     "sqlite",
-    "storer"
+    "storer",
+    "문의사항은",
+    "상영프로그램",
+    "안녕하세요",
+    "업데이트될",
+    "제보해주세요",
+    "텔레그램",
+    "한국영상자료원에"
   ],
   "search.exclude": {
     "**/env": true
   },
   "[python]": {
-    "editor.rulers": [73, 80]
-  }
+    "editor.rulers": [73, 80],
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false
+  },
 }
